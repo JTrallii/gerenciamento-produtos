@@ -7,14 +7,14 @@ export default function StockItems() {
       <h1>Estoque de Itens</h1>
       <div className="tabs">
         <Link
-          to="/items"
-          className={`tab ${pathname === "/items" ? "active" : ""}`}
+          to="/itens"
+          className={`tab ${pathname === "/itens" ? "active" : ""}`}
         >
           Todos os itens
         </Link>
         <Link
-          to="/items/new"
-          className={`tab ${pathname === "/items/new" ? "active" : ""}`}
+          to="/itens/new"
+          className={`tab ${pathname === "/itens/new" ? "active" : ""}`}
         >
           Novo item
         </Link>

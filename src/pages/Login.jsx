@@ -9,7 +9,7 @@ export default function Login() {
         </Link>
         <nav>
           <Link to="/">Início</Link>
-          <Link to="/items">Produtos</Link>
+          <Link to="/itens">Produtos</Link>
           <Link to="/login">Entrar</Link>
         </nav>
       </header>

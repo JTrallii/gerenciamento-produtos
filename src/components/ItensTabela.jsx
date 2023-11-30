@@ -20,13 +20,16 @@ export default function ItensTabela() {
           <tr key={item.id}>
             <td>{item.id}</td>
             <td>{item.name}</td>
-            <td>{item.quantity} unid.</td>
-            <td>{item.category}</td>
+            <td>{item.quantidade} unid.</td>
+            <td>{item.categoria}</td>
             <td>
-              <Link to={`/items/${item.id}`} className="button is-primary is-small">
+              <Link
+                to={`/itens/${item.id}`}
+                className="button is-primary is-small"
+              >
                 Ver
               </Link>
-              <Link to={`/items/${item.id}/update`} className="button is-small">
+              <Link to={`/itens/${item.id}/update`} className="button is-small">
                 Atualizar
               </Link>
             </td>
@@ -34,5 +37,5 @@ export default function ItensTabela() {
         ))}
       </tbody>
     </table>
-  )
+  );
 }
