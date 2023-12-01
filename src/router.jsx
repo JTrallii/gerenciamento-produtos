@@ -3,8 +3,8 @@ import Home from "./pages/Home";
 import RootLayout from "./pages/RootLayout";
 import ListItems from "./pages/Itens/ListarItens";
 import CriarItem from "./pages/Itens/CriarItem";
-import ShowItems from "./pages/Itens/MostrarItens";
-import UpdateItems from "./pages/Itens/UpdateItems";
+import MostrarItens from "./pages/Itens/MostrarItens";
+import AtualizarItem from "./pages/Itens/AtualizarItem";
 import StockItems from "./pages/Itens/StockItems";
 import Login from "./pages/Login";
 
@@ -19,9 +19,9 @@ const router = createBrowserRouter([
         element: <StockItems />,
         children: [
           { index: true, element: <ListItems /> },
-          { path: "new", element: <CriarItem /> },
-          { path: ":id", element: <ShowItems /> }, //Vamos ter valores dinamicos e com caminhos especificos
-          { path: ":id/update", element: <UpdateItems /> },
+          { path: "novo", element: <CriarItem /> },
+          { path: ":id", element: <MostrarItens /> }, //Vamos ter valores dinamicos e com caminhos especificos
+          { path: ":id/atualizar", element: <AtualizarItem /> },
         ],
       },
     ],

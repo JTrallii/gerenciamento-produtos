@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import useStock from "../hooks/useStock";
+import BotaoExcluir from "./BotaoExcluir";
 
 export default function ItensTabela() {
   const { items } = useStock();
@@ -29,9 +30,13 @@ export default function ItensTabela() {
               >
                 Ver
               </Link>
-              <Link to={`/itens/${item.id}/update`} className="button is-small">
+              <Link
+                to={`/itens/${item.id}/atualizar`}
+                className="button is-small"
+              >
                 Atualizar
               </Link>
+              <BotaoExcluir itemId={item.id} itemName={item.name} />
             </td>
           </tr>
         ))}

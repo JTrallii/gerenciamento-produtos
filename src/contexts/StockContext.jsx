@@ -28,13 +28,39 @@ export function StockContextProvider({ children }) {
     });
   };
 
+  const mostrarItem = (itemId) => {
+    return items.find(item => item.id === +itemId)
+  }
+
+  const atualizarItem = (itemId, novoAtributo) => {
+    setItems(currentState => {
+      const indexItem = currentState.findIndex(item => item.id === +itemId)
+      const itemAtualizado = [...currentState]
+      Object.assign(itemAtualizado[indexItem], novoAtributo, { updatedAt: new Date() })
+      localStorage.setItem("gerenciamento-produtos", JSON.stringify(itemAtualizado));
+      return itemAtualizado
+    })
+  }
+
+  const excluirItem = (itemId) => {
+    setItems((currentState) => {
+      const itemExcluido = currentState.filter((item) => item.id !== itemId);
+      localStorage.setItem(
+        "gerenciamento-produtos",
+        JSON.stringify(itemExcluido)
+      );
+      return itemExcluido;
+    });
+  };
+
   const stock = {
     items,
     adicionarItem,
+    excluirItem,
+    mostrarItem,
+    atualizarItem
   };
   return (
-    <StockContext.Provider value={stock}>
-      {children}
-    </StockContext.Provider>
+    <StockContext.Provider value={stock}>{children}</StockContext.Provider>
   );
 }

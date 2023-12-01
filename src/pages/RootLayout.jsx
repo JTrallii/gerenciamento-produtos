@@ -1,18 +1,10 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import Header from "../components/Header";
 
 export default function RootLayout() {
   return (
     <>
-      <header>
-        <Link to="/" className="logo">
-          SUA LOGO
-        </Link>
-        <nav>
-          <Link to="/">Início</Link>
-          <Link to="/itens">Produtos</Link>
-          <Link to="/login">Entrar</Link>
-        </nav>
-      </header>
+      <Header />
       <div>
         <Outlet />
       </div>

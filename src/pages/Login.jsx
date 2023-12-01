@@ -1,18 +1,10 @@
 import { Link } from "react-router-dom";
+import Header from "../components/Header";
 
 export default function Login() {
   return (
     <>
-      <header>
-        <Link to="/" className="logo">
-          SUA LOGO
-        </Link>
-        <nav>
-          <Link to="/">Início</Link>
-          <Link to="/itens">Produtos</Link>
-          <Link to="/login">Entrar</Link>
-        </nav>
-      </header>
+      <Header />
       <div id="gridContainer" className="grid">
         <form action="" className="">
           <label htmlFor="usuario">Usuário:</label>
@@ -24,7 +16,10 @@ export default function Login() {
           </button>
         </form>
         <div id="trocarSenha" className="">
-          Esqueceu sua senha ? <Link to="/trocarSenha" className="link">Clique aqui !</Link>
+          Esqueceu sua senha ?{" "}
+          <Link to="/trocarSenha" className="link">
+            Clique aqui !
+          </Link>
         </div>
       </div>
       <footer className="">TODOS OS DIREITOS RESERVADOS</footer>

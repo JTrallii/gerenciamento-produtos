@@ -13,8 +13,8 @@ export default function StockItems() {
           Todos os itens
         </Link>
         <Link
-          to="/itens/new"
-          className={`tab ${pathname === "/itens/new" ? "active" : ""}`}
+          to="/itens/novo"
+          className={`tab ${pathname === "/itens/novo" ? "active" : ""}`}
         >
           Novo item
         </Link>

@@ -19,7 +19,7 @@ export default function ItemForm({ itemAtualizado }) {
   const [item, setItem] = useState(
     itemAtualizado ? itemAtualizado : defaultItem
   ); //Se for passado a prop, sera o estado inicial da prop, caso contrario, o defaultItem
-  const { adicionarItem, updateItem } = useStock();
+  const { adicionarItem, atualizarItem } = useStock();
   const inputRef = useRef(null);
 
   const handleChange = (ev) => {
@@ -30,7 +30,7 @@ export default function ItemForm({ itemAtualizado }) {
     ev.preventDefault();
     try {
       if (itemAtualizado) {
-        updateItem(itemAtualizado.id, item);
+        atualizarItem(itemAtualizado.id, item);
         alert("Item atualizado com sucesso!");
       } else {
         const validItem = new StockItem(item);
